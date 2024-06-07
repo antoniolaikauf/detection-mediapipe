@@ -1,10 +1,11 @@
 const video_tag = document.getElementById('video')
 
 function video() {
-    // primo key  è video 
+    // permette di accedere alla telecamera 
     navigator.getUserMedia(
-        { video: {} },
-    // stream è un metodo 
+    // primo key  è video e sono i parametri 
+        { video: { width: 720, height: 720 } },
+    // metodo  metodo 
         stream => video_tag.srcObject = stream,
         error => console.error(error),
     )
