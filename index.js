@@ -11,22 +11,32 @@ function video() {
     )
 }
 
+// const handLandmarker = await HandLandmarker.createFromOptions(
+//     vision,
+//     {
+//       baseOptions: {
+//         modelAssetPath: "hand_landmarker.task"
+//       },
+//       numHands: 2
+// });
+
 
 async function main() {
     video();
 
-    const hands = new Hands({locateFile: (file) => {
+    const hands = new Hands({
+        locateFile: (file) => {
+        console.log(file);
         return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
     }});
 
     hands.setOptions({
         // static_image_mode:false, // serve solo per immagini e il rilevamento delle mani 
-        numHands: -1,
+        maxNumHands: 2,
         modelComplexity: 1, // modello algoritmo complessità 
         minDetectionConfidence: 0.1, // piu è alto e piu farà fatica a rilevare le mani 
         minTrackingConfidence: 0.5
-    });
-
+        });
     // dire quando ottiene i risultati onResults
     hands.onResults(onResults);
 
