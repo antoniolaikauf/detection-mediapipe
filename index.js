@@ -1,6 +1,5 @@
 const videoElement = document.getElementById('video');
 const canvasElement = document.getElementById('output_canvas');
-console.log(canvasElement);
 const canvasCtx = canvasElement.getContext('2d'); // metodo che permette di disegnare 
 
 // funzione camera 

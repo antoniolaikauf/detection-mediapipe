@@ -1,4 +1,4 @@
-import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(module => {
+import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(module => { // si importa il moduli dal link e dopo si brendono solo i due alori che ci interessano (HandLandmarker, FilesetResolver)
     const { HandLandmarker, FilesetResolver } = module;
     // Your code here
     let handLandmarker = undefined
@@ -8,7 +8,8 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(modul
     const createHandLandmarker = async () => {
         const vision = await FilesetResolver.forVisionTasks(
             "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/wasm"
-        );
+      );
+      // console.log(vision);
         handLandmarker = await HandLandmarker.createFromOptions(vision, {
             baseOptions: {
                 modelAssetPath: 'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task',
@@ -84,19 +85,3 @@ for (let i = 0; i < imageContainers.length; i++) {
     }
 
 });
-
-
-
-
-
-
-// const camera = document.getElementById('video')
-
-// function camera_computer() {
-//     navigator.getUserMedia(
-//         { video: { width: 1000, height: 1000 } },
-//         stream => camera.srcObject = stream,
-//         error => console.error(error),
-//     )
-// }
-
