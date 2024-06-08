@@ -45,9 +45,10 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(modul
     score.innerHTML=handLandmarkerResult.handednesses[0][0].score
     const canvas = document.getElementById('canvas') // si ottiene il canvas in cui ci sarà l'immagine 
     const cxt = canvas.getContext("2d");
+
+
     cxt.clearRect(0, 0, canvas.width, canvas.height) // si cancella il disegno del canvas precedente
     for (const landmarks of handLandmarkerResult.landmarks) { // handLandmarkerResult.landmarks contiene tutte le cordinate dei 21 punti della mano x,y,z
-     console.log(HAND_CONNECTIONS);
       drawConnectors(cxt, landmarks, HAND_CONNECTIONS, {
         color: "#00FF00",
         lineWidth: 2
