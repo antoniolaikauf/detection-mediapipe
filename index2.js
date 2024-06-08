@@ -1,4 +1,4 @@
-import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(module => { // si importa il moduli dal link e dopo si brendono solo i due alori che ci interessano (HandLandmarker, FilesetResolver)
+import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(module => { // si importa il moduli dal link e dopo si prendono solo i due valori interessano (HandLandmarker, FilesetResolver)
   const { HandLandmarker, FilesetResolver, DrawingUtils } = module;
   
     console.log(DrawingUtils);
@@ -53,7 +53,7 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(modul
     for (const landmarks of handLandmarkerResult.landmarks) { // handLandmarkerResult.landmarks contiene tutte le cordinate dei 21 punti della mano x,y,z
       drawConnectors(cxt, landmarks, HAND_CONNECTIONS, {
         color: "#00FF00",
-        lineWidth:5,
+        lineWidth:1,
       });
       drawLandmarks(cxt, landmarks, { color: "#FF0000", lineWidth: 1 });
       // drawLandmarks  drawConnectors permettono di disegnare la mano che ha rilevato
