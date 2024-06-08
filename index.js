@@ -1,5 +1,6 @@
 const videoElement = document.getElementById('video');
 const canvasElement = document.getElementById('output_canvas');
+console.log(canvasElement);
 const canvasCtx = canvasElement.getContext('2d'); // metodo che permette di disegnare 
 
 // funzione camera 
@@ -10,15 +11,6 @@ function video() {
         error=>console.error(error),
     )
 }
-
-// const handLandmarker = await HandLandmarker.createFromOptions(
-//     vision,
-//     {
-//       baseOptions: {
-//         modelAssetPath: "hand_landmarker.task"
-//       },
-//       numHands: 2
-// });
 
 console.log(canvasCtx);
 
@@ -60,7 +52,7 @@ function onResults(results) {
     if (results.multiHandLandmarks) {
         for (const landmarks of results.multiHandLandmarks) {
             drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
-                            {color: '#00FF00', lineWidth: 8}); // linee mano 
+                            {color: '#00FF00', lineWidth: 3}); // linee mano 
             drawLandmarks(canvasCtx, landmarks, { color: '#FF0000', lineWidth: 2}); // nodi mano
         }
     }
