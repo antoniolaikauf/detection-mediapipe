@@ -9,7 +9,6 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(modul
         const vision = await FilesetResolver.forVisionTasks(
             "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/wasm"
       );
-      // console.log(vision);
         handLandmarker = await HandLandmarker.createFromOptions(vision, {
             baseOptions: {
                 modelAssetPath: 'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task', // modello algoritmo 
@@ -17,53 +16,44 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(modul
           },
           scoreTreshold: 0.5, // score che da il modello *
           runningMode: runningMode, //*
-           numHands:2 //*
+          numHands:2 //*
         })
     }
-    createHandLandmarker()
-    //    ********************************************************************
-// Demo 1: Grab a bunch of images from the page and detection them
-// upon click.
-//********************************************************************
-
-// In this demo, we have put all our clickable images in divs with the
-// CSS class 'detectionOnClick'. Lets get all the elements that have
-// this class.
-const imageContainers = document.getElementsByClassName("detectOnClick");
-  // Now let's go through all of these and add a click event listener.
+  createHandLandmarker()
+  // se si ha solo un immagine si può togliere 
+  const imageContainers = document.getElementsByClassName("detectOnClick");  
   for (let i = 0; i < imageContainers.length; i++) {
-  imageContainers[i].addEventListener("click", handleClick);
-}
-// When an image is clicked, let's detect it and display results!
+    imageContainers[i].addEventListener("click", handleClick);
+  }
   async function handleClick(event) {
     if (!handLandmarker) {
-      console.log("Wait for handLandmarker to load before clicking!");
+      console.log("Wait for handLandmarker to load before clicking!"); // modello non ha ancora caricato
       return;
     }
-  
+    // serve solo se il modello è impostato male
     if (runningMode === "VIDEO") {
       runningMode = "IMAGE";
       await handLandmarker.setOptions({ runningMode: "IMAGE" });
     }
  
-    // We can call handLandmarker.detect as many times as we like with
-    // different image data each time. This returns a promise
-    // which we wait to complete and then call a function to
-    // print out the results of the prediction.
     const handLandmarkerResult = handLandmarker.detect(event.target);
     console.log(handLandmarkerResult.handednesses[0][0]); // score del modello 
     console.log(handLandmarkerResult);  // qua ci sono le cordinate con i suoi 21 punti e ogni punto ha un x, y , z
-
-    const canvas = document.getElementById('canvas')
+    // score in html 
+    const score = document.getElementById('score')
+    score.innerHTML=''
+    score.innerHTML=handLandmarkerResult.handednesses[0][0].score
+    const canvas = document.getElementById('canvas') // si ottiene il canvas in cui ci sarà l'immagine 
     const cxt = canvas.getContext("2d");
-    cxt.clearRect(0, 0, canvas.width, canvas.height)
-    // canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
-    for (const landmarks of handLandmarkerResult.landmarks) {
+    cxt.clearRect(0, 0, canvas.width, canvas.height) // si cancella il disegno del canvas precedente
+    for (const landmarks of handLandmarkerResult.landmarks) { // handLandmarkerResult.landmarks contiene tutte le cordinate dei 21 punti della mano x,y,z
+     console.log(HAND_CONNECTIONS);
       drawConnectors(cxt, landmarks, HAND_CONNECTIONS, {
         color: "#00FF00",
-        lineWidth: 5
+        lineWidth: 2
       });
       drawLandmarks(cxt, landmarks, { color: "#FF0000", lineWidth: 1 });
+      // drawLandmarks  drawConnectors permettono di disegnare la mano che ha rilevato
     }
     }
 
