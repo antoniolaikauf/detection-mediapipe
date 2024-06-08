@@ -20,6 +20,7 @@ function video() {
 //       numHands: 2
 // });
 
+console.log(canvasCtx);
 
 async function main() {
     video();
@@ -74,3 +75,5 @@ main();
 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
 
 // https://mediapipe.readthedocs.io/en/latest/solutions/hands.html#:~:text=MediaPipe%20Hands%20is%20a%20high,from%20just%20a%20single%20frame.
+
+// https://github.com/google-ai-edge/mediapipe/blob/master/docs/solutions/hands.md
