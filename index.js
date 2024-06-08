@@ -20,10 +20,14 @@ async function main() {
         locateFile: (file) => {
         console.log(file);
         return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
-    }});
+        }
+    });
+    
+    console.log(hands);
 
     hands.setOptions({
         // static_image_mode:false, // serve solo per immagini e il rilevamento delle mani 
+        
         maxNumHands: 2,
         modelComplexity: 1, // modello algoritmo complessità 
         minDetectionConfidence: 0.1, // piu è alto e piu farà fatica a rilevare le mani 
@@ -44,7 +48,7 @@ async function main() {
 
 function onResults(results) {
     canvasCtx.save();
-    canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height); // cancella tutti i pixel in un area 
+    canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height); // cancella tutti i pixel in un area all'interno ci sono le cordinate 
     canvasCtx.drawImage(
         results.image, 0, 0, canvasElement.width, canvasElement.height);
 
@@ -68,3 +72,5 @@ main();
 // https://mediapipe.readthedocs.io/en/latest/solutions/hands.html#:~:text=MediaPipe%20Hands%20is%20a%20high,from%20just%20a%20single%20frame.
 
 // https://github.com/google-ai-edge/mediapipe/blob/master/docs/solutions/hands.md
+
+// https://ai.google.dev/edge/mediapipe/solutions/vision/object_detector?hl=it#models modelli algoritmi che si possono usare 
