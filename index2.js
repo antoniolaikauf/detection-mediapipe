@@ -59,7 +59,8 @@ for (let i = 0; i < imageContainers.length; i++) {
     // which we wait to complete and then call a function to
     // print out the results of the prediction.
     const handLandmarkerResult = handLandmarker.detect(event.target);
-    console.log(handLandmarkerResult.handednesses[0][0]);
+    console.log(handLandmarkerResult.handednesses[0][0]); // score del modello 
+    console.log(handLandmarkerResult);  // qua ci sono le cordinate con i suoi 21 punti e ogni punto ha un x, y , z
     const canvas = document.createElement("canvas");
     canvas.setAttribute("class", "canvas");
     canvas.setAttribute("width", event.target.naturalWidth + "px");
