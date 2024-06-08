@@ -48,7 +48,7 @@ async function main() {
 
 function onResults(results) {
     canvasCtx.save();
-    canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height); // cancella tutti i pixel in un area all'interno ci sono le cordinate 
+    canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height); // cancella tutti i pixel in un area all'interno ci sono le cordinate pulisce il canvas 
     canvasCtx.drawImage(
         results.image, 0, 0, canvasElement.width, canvasElement.height);
 
