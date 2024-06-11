@@ -19,7 +19,10 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(modul
           runningMode: runningMode, //*
           numHands:2 //*
         })
-    }
+  }
+  
+  
+  // `https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite0/float16/1/efficientdet_lite0.tflite`
   createHandLandmarker()
   // se si ha solo un immagine si può togliere 
   const imageContainers = document.getElementsByClassName("detectOnClick");  
