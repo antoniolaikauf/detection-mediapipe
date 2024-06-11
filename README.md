@@ -11,7 +11,7 @@ Mediapipe fornisce modelli che possono essere integrati all'interno delle applic
 
 Nel codice all'interno di [index2.js](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index2.js) trovere un codice in cui qualsiasi immagine verrà messa rileverà l'immagine  invece nel altro file [index.js](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index.js) è ancora in sviluppo ma rileva le mani della persona davanti alla telecamera
 
-Il rilevamento delle mani avviene tramite 21 punti [mano](img/struttura%20mano.png)
+Il rilevamento delle mani avviene tramite 21 punti ![mano](img/struttura%20mano.png)
 # Procedimento 
 Il procedimento peer implementare il rilevamento è il seguente
 
