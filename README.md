@@ -9,7 +9,7 @@ link media pipe https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it
 
 Mediapipe fornisce modelli che possono essere integrati all'interno delle applicazzioni usando le le API 
 
-Nel codice all'interno di [index2.js][https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index2.js]
+Nel codice all'interno di [index2.js](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index2.js) trovere un codice in cui qualsiasi immagine verrà messa rileverà l'immagine  invece nel altro file è ancora in sviluppo ma rileva le mani della persona davanti alla telecamera
 
 ```
 per i modelli usati da pipeline ce ne sono vari in base a quello in cui si vuole usarli
