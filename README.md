@@ -9,6 +9,8 @@ link media pipe https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it
 
 Mediapipe fornisce modelli che possono essere integrati all'interno delle applicazzioni usando le le API 
 
+Nel codice all'interno di [index2.js][https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index2.js]
+
 ```
 per i modelli usati da pipeline ce ne sono vari in base a quello in cui si vuole usarli
 ```
