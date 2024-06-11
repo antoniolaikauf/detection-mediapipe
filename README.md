@@ -1,4 +1,4 @@
-# Come usare la libreria mediapipe
+# Come usare mediapipe
 
 link mediapipe https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it
 
@@ -17,9 +17,13 @@ Il rilevamento delle mani avviene tramite 21 punti ![mano](img/struttura%20mano.
 Il procedimento peer implementare il rilevamento è il seguente:
 - importare il modello desiterato, tutti i vari tipi di modelli sono ad [qui](https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it) nella sezione **soluzioni disponibili** essa presenta una tabella in cui può eseguire i modelli ![](img/Screenshot%202024-06-11%20174609.png)
 
-```
-per i modelli usati da pipeline ce ne sono vari in base a quello in cui si vuole usarli
-```
+- una volta importato il modello bisogna lasciare che il modello carichi 
+
+- una volta caricati i modelli bisogna stampare i punti che ha rilevato della mano 
+
+quindi per usarlo bisognerebbe compiere questi tre passaggi e il resto lo farà mediapipe 
+
+se si vuole capire di piu si potrebbe guardare i [video](https://www.youtube.com/watch?v=C3-WnwzsaJA&list=PLOU2XLYxmsILVnjfBvtTWZC4YiHBwz-4l) che sono usciti su youtube da parte di google essendo che questo framework è sviluppato da loro o se lo sviluppi con python non dovresti avere problemi ma se lo sviluppi con altro lo troverai più complicato essendo che è piu difficile trvare informazioni
 
 # links utili
 ```
