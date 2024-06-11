@@ -9,7 +9,7 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(modul
     const createHandLandmarker = async () => {
         const vision = await FilesetResolver.forVisionTasks(
             "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/wasm"
-      );
+        );
         handLandmarker = await HandLandmarker.createFromOptions(vision, {
             baseOptions: {
                 modelAssetPath: 'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task', // modello algoritmo 
@@ -21,8 +21,6 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(modul
         })
   }
   
-  
-  // `https://storage.googleapis.com/mediapipe-models/object_detector/efficientdet_lite0/float16/1/efficientdet_lite0.tflite`
   createHandLandmarker()
   // se si ha solo un immagine si può togliere 
   const imageContainers = document.getElementsByClassName("detectOnClick");  
