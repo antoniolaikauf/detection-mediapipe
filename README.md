@@ -1,3 +1,9 @@
+# Come usare la libreria mediapipe
+
+link media pipe https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it
+
+**Media pipe** è una libreria che utilizza modelli di intelligenza artificiale per rilevare dati che si forniscono 
+
 ```
 per i modelli usati da pipeline ce ne sono vari in base a quello in cui si vuole usarli
 ```

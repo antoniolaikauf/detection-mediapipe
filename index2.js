@@ -13,7 +13,7 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(modul
         handLandmarker = await HandLandmarker.createFromOptions(vision, {
             baseOptions: {
                 modelAssetPath: 'https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task', // modello algoritmo 
-                delegate:'GPU' //*
+                // delegate:'GPU' //*
           },
           scoreTreshold: 0.5, // score che da il modello *
           runningMode: runningMode, //*
