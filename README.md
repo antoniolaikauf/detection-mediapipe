@@ -2,7 +2,12 @@
 
 link media pipe https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it
 
-**Media pipe** è una libreria che utilizza modelli di intelligenza artificiale per rilevare dati che si forniscono 
+**Mediapipe** è una libreri sviluppata da Google che utilizza machine learning per compiere compiti visivi: 
+
+- tracciamento delle mani 
+- rilevamento dei volti 
+
+Mediapipe fornisce modelli che possono essere integrati all'interno delle applicazzioni usando le le API 
 
 ```
 per i modelli usati da pipeline ce ne sono vari in base a quello in cui si vuole usarli
