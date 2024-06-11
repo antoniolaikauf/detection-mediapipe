@@ -5,7 +5,8 @@ link mediapipe https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it
 **Mediapipe** è un framework sviluppato da Google che utilizza machine learning per compiere compiti visivi: 
 
 - tracciamento delle mani 
-- rilevamento dei volti 
+- rilevamento dei volti
+- rilevamento degli oggetti
 
 Mediapipe fornisce modelli che possono essere integrati all'interno delle applicazioni usando le le API 
 
