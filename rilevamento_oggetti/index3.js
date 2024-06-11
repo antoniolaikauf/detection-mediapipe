@@ -4,8 +4,6 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.2').then(modul
     let objectDetector = ObjectDetector
     const img_section=document.getElementById('devos')
     let runningMode = 'IMAGE'
-    // i parametri con * sono opzionali
-    // chiamata per caricare il modello prima bisogna che si carichi il modello prima di fare altro 
     const initializeObjectDetector = async () => {
         const vision = await FilesetResolver.forVisionTasks("https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/wasm");
         objectDetector = await ObjectDetector.createFromOptions(vision, {
@@ -32,8 +30,49 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.2').then(modul
         
     }
 
-    function  displayImageDetections(result, resultElemnt){
-        const radio = resultElemnt.height / resultElemnt.naturalHeight
-        console.log(radio);
+    function  displayImageDetections(result, resultElement){
+        const ratio = resultElement.height / resultElement.naturalHeight
+
+        console.log(result); // cordinate 
+        // for (const detection of result.detections) {
+        //     const p = document.createElement("p");
+        //     p.setAttribute("class", "info");
+        //     p.innerText =
+        //       detection.categories[0].categoryName +
+        //       " - with " +
+        //       Math.round(parseFloat(detection.categories[0].score) * 100) +
+        //       "% confidence.";
+        //     // Positioned at the top left of the bounding box.
+        //     // Height is whatever the text takes up.
+        //     // Width subtracts text padding in CSS so fits perfectly.
+        //     p.style =
+        //       "left: " +
+        //       detection.boundingBox.originX * ratio +
+        //       "px;" +
+        //       "top: " +
+        //       detection.boundingBox.originY * ratio +
+        //       "px; " +
+        //       "width: " +
+        //       (detection.boundingBox.width * ratio - 10) +
+        //       "px;";
+        //     const highlighter = document.createElement("div");
+        //     highlighter.setAttribute("class", "highlighter");
+        //     highlighter.style =
+        //       "left: " +
+        //       detection.boundingBox.originX * ratio +
+        //       "px;" +
+        //       "top: " +
+        //       detection.boundingBox.originY * ratio +
+        //       "px;" +
+        //       "width: " +
+        //       detection.boundingBox.width * ratio +
+        //       "px;" +
+        //       "height: " +
+        //       detection.boundingBox.height * ratio +
+        //       "px;";
+        
+        //     resultElement.parentNode.appendChild(highlighter);
+        //     resultElement.parentNode.appendChild(p);
+        // }
     }
 })
