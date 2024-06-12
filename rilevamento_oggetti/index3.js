@@ -17,10 +17,9 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.2').then(modul
     initializeObjectDetector()
 
     const imgObject = document.getElementById('imgObject')
-    imgObject.children[0].addEventListener('click',clickImg)
+    imgObject.children[0].addEventListener('click', clickImg)
     
     async function clickImg(event) {
-        console.log(event.target);
         if (!objectDetector) {
             console.log('non sono stato caricato');
             return
@@ -30,13 +29,19 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.2').then(modul
         
     }
 
+
+    imgObject.onload=  ()=> {
+        const canvas = document.getElementById('canva')
+        const ctx = canvas.getContext('2d')
+        canvas.width=imgObject.
+    }
     function displayImageDetections(result, resultElement) {
         const ratio = resultElement.height / resultElement.naturalHeight
         for (const detections of result.detections) {
-            const image_detected = document.createElement('p')
-            image_detected.innerText = detections.categories[0].categoryName
-            resultElement.parentNode.appendChild(image_detected)
-            
+            console.log(detections);
+            ctx.drawImage(imgObject.children[0], detections.boundingBox.origiX,detections.boundingBox.origiY)
+            // image_detected.innerText = detections.categories[0].categoryName
+            // resultElement.parentNode.appendChild(image_detected)  
         }
     }
 })

@@ -51,6 +51,7 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0').then(modul
     cxt.clearRect(0, 0, canvas.width, canvas.height) // si cancella il disegno del canvas precedente
     // const Drawingutils= new DrawingUtils(cxt)
     for (const landmarks of handLandmarkerResult.landmarks) { // handLandmarkerResult.landmarks contiene tutte le cordinate dei 21 punti della mano x,y,z
+      console.log(landmarks);
       drawConnectors(cxt, landmarks, HAND_CONNECTIONS, {
         color: "#00FF00",
         lineWidth:1,
