@@ -25,28 +25,18 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.2').then(modul
             return
         } else console.log('caricato modello');
         const detections = objectDetector.detect(event.target)
-        imgDraw()
-        //  displayImageDetections(detections,event.target)        
-        
+        imgDraw(detections)      
     }
 
 
-    function imgDraw() {
-        console.log('ciao');
+    function imgDraw(imgs_detection) {
         const canvas = document.getElementById('canva')
         const ctx = canvas.getContext('2d')
-
-        
+        imgs_detection.detections.forEach(element => {
+            console.log(element.boundingBox.originY);
+            ctx.rect(element.boundingBox.originX, element.boundingBox.originY, element.boundingBox.width, element.boundingBox.height)
+            ctx.stroke()
+        });
     }
 
-
-    function displayImageDetections(result, resultElement) {
-        const ratio = resultElement.height / resultElement.naturalHeight
-        for (const detections of result.detections) {
-            console.log(detections);
-            ctx.drawImage(imgObject.children[0], detections.boundingBox.origiX, detections.boundingBox.origiY)
-            // image_detected.innerText = detections.categories[0].categoryName
-            // resultElement.parentNode.appendChild(image_detected)  
-        }
-    }
 })
