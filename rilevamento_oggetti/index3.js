@@ -33,7 +33,6 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.2').then(modul
         const canvas = document.getElementById('canva')
         const ctx = canvas.getContext('2d')
         imgs_detection.detections.forEach(element => {
-            console.log(element.boundingBox.originY);
             ctx.rect(element.boundingBox.originX, element.boundingBox.originY, element.boundingBox.width, element.boundingBox.height)
             ctx.stroke()
         });
