@@ -1,3 +1,5 @@
-#canva{
-    border:1px solid #d3d3d3;
+#imgObject img, #imgObject #canva{
+ width: 500px;
+ height: 400px;
 }
+

@@ -32,6 +32,7 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.2').then(modul
     function imgDraw(imgs_detection) {
         const canvas = document.getElementById('canva')
         const ctx = canvas.getContext('2d')
+        ctx.drawImage(imgObject.children[0],0,0)
         imgs_detection.detections.forEach(element => {
             ctx.rect(element.boundingBox.originX, element.boundingBox.originY, element.boundingBox.width, element.boundingBox.height)
             ctx.stroke()
