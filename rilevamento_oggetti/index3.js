@@ -35,8 +35,14 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.2').then(modul
         const ctx = canvas.getContext('2d')
         ctx.drawImage(imgObject.children[0],0,0) // disegna l'immagine nel canvas
         imgs_detection.detections.forEach(element => {
+            console.log(element);
+            // disegno background
+            ctx.font = "bold 14px verdana, sans-serif"
+            ctx.fillStyle='#ff0000'
+            ctx.fillText(element.categories[0].categoryName,element.boundingBox.originX + 6,element.boundingBox.originY + 12 )
             ctx.fillStyle = 'rgb(53, 237, 53, 0.247)'
             ctx.fillRect(element.boundingBox.originX, element.boundingBox.originY, element.boundingBox.width, element.boundingBox.height) // disegna nel canvas le sagome con le cordinate rilevate
+            // disegno bordi
             ctx.lineWidth = 2
             ctx.strokeStyle = 'black'
             ctx.strokeRect(element.boundingBox.originX, element.boundingBox.originY, element.boundingBox.width, element.boundingBox.height)
