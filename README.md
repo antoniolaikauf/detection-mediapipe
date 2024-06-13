@@ -103,8 +103,12 @@ Nel file nella cartella [rilevamento_oggetti](/rilevamento_oggetti) si potra ved
 
 
 # Procedimento 
-Il procedimento peer implementare il rilevamento è il seguente:
-- importare il modello desiderato, tutti i vari tipi di modelli sono [qui](https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it) nella sezione **soluzioni disponibili** essa presenta una tabella con tutti i modelli disponibili ![](img/Screenshot%202024-06-11%20174609.png)
+Il procedimento per implementare il rilevamento è il seguente:
+1. importare mediapipe e prendere i valori necessari 
+2. importare il file per rilevamento visivo 
+3. importare il modello che si vuole 
+   - se si volesse mettere il file dentro alla repo e quindi scaricare il modello 'penso' che dovresti avere un server perche usando il relative path mi dava errore di cors policy
+   - tutti i modelli che si possono usare sono [qui](https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it) nella sezione **soluzioni disponibili** essa presenta una tabella con tutti i modelli disponibili ![](img/Screenshot%202024-06-11%20174609.png)
 
 - una volta importato il modello bisogna lasciare che il modello carichi 
 

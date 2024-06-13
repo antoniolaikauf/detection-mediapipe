@@ -18,7 +18,7 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.2').then(modul
     initializeObjectDetector()
 
     const imgObject = document.getElementById('imgObject')
-    imgObject.children[0].addEventListener('click', clickImg)
+    imgObject.addEventListener('click', clickImg)
     
     async function clickImg(event) {
         if (!objectDetector) {
@@ -33,7 +33,7 @@ import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.2').then(modul
     function imgDraw(imgs_detection) {
         const canvas = document.getElementById('canva')
         const ctx = canvas.getContext('2d')
-        ctx.drawImage(imgObject.children[0],0,0) // disegna l'immagine nel canvas
+        ctx.drawImage(imgObject,0,0) // disegna l'immagine nel canvas
         imgs_detection.detections.forEach(element => {
             console.log(element);
             // disegno background
