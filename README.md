@@ -10,14 +10,12 @@ link mediapipe https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it
 
 Mediapipe fornisce modelli che possono essere integrati all'interno delle applicazioni usando le le API 
 
-```
-Nel codice all'interno di [index2.js](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index2.js) trovere il codice in cui si può rilevare l'immagine di una mano, invece nel altro file [index.js](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index.js) (è ancora in sviluppo) rileva le mani della persona durante un video
+
+Nel codice all'interno di [index2.js](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index2.js) troverete il codice in cui si può rilevare l'immagine di una mano, mentre nell'altro file [index.js](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index.js) (è ancora in sviluppo)viene rilevata la mano della persona durante un video.
 
 Il rilevamento delle mani avviene tramite 21 punti ![mano](img/struttura%20mano.png) ogni punto ha le cordinate x, y, x che verranno usate per disegnare la mano rilevata 
-```
 
-
-Nel file nella cartella [rilevamento_oggetti](/rilevamento_oggetti) si potra vedere un modello che è capace di rilevare oggetti dell'immagine, in base al modello che si usa ci sono vari oggetti che il modello può rilevare 
+Nel file nella cartella [rilevamento_oggetti](/rilevamento_oggetti) si potra vedere un modello che è capace di rilevare oggetto dell'immagine, a seconda del modello utilizzato, ci sono vari oggetti che possono essere rilevati.
 
 - person
 - bicycle
@@ -104,19 +102,15 @@ Nel file nella cartella [rilevamento_oggetti](/rilevamento_oggetti) si potra ved
 
 # Procedimento 
 Il procedimento per implementare il rilevamento è il seguente:
-1. importare mediapipe e prendere i valori necessari 
-2. importare il file per rilevamento visivo 
-3. importare il modello che si vuole 
-   - se si volesse mettere il file dentro alla repo e quindi scaricare il modello 'penso' che dovresti avere un server perche usando il relative path mi dava errore di cors policy
-   - tutti i modelli che si possono usare sono [qui](https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it) nella sezione **soluzioni disponibili** essa presenta una tabella con tutti i modelli disponibili ![](img/Screenshot%202024-06-11%20174609.png)
+1. Importare MediaPipe e ottenere i valori necessari 
+2. Importare il file per il rilevamento visivo 
+3. Importare il modello desiderato 
+   - se si volesse mettere il file dentro alla repo e quindi scaricare il modello penso che dovresti avere un server perche usando il relative path mi dava errore di cors policy
+   - tutti i modelli disponibili sono elencati [qui](https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it) nella sezione **soluzioni disponibili** essa presenta una tabella con tutti i modelli disponibili ![](img/Screenshot%202024-06-11%20174609.png)
+5. una volta finito di importare bisogna fare un evento e far rilevare l'immagine al modello objectDetector.detect(event.target) even.target sarebbe l'immagine invece objectDetector sarebbe il modello
+6. una volta che il modello ha preso le cordinate bisogna stampare e si ottiene il rilevamento dell'imagine o video
 
-- una volta importato il modello bisogna lasciare che il modello carichi 
-
-- una volta caricati i modelli bisogna stampare i punti che ha rilevato della mano 
-
-quindi per usarlo bisogna compiere questi tre passaggi e il resto lo farà mediapipe 
-
-se si vuole capire di piu si potrebbe guardare i [video](https://www.youtube.com/watch?v=C3-WnwzsaJA&list=PLOU2XLYxmsILVnjfBvtTWZC4YiHBwz-4l) che sono usciti su youtube da parte di google essendo che questo framework è sviluppato da loro o se lo sviluppi con python non dovresti avere problemi ma se lo sviluppi con altro lo troverai più complicato essendo che è piu difficile trvare informazioni
+e si vuole capire di più, si potrebbero guardare i [video](https://www.youtube.com/watch?v=C3-WnwzsaJA&list=PLOU2XLYxmsILVnjfBvtTWZC4YiHBwz-4l) che sono usciti su youtube da parte di google poichè questo framework è sviluppato da loro. Se lo sviluppi con Python non dovresti avere problemi, ma se usi un altro linguaggio potrebbe essere più complicato trovare informazioni.
 
 # links utili
 ```
