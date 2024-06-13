@@ -11,7 +11,7 @@ link mediapipe https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it
 Mediapipe fornisce modelli che possono essere integrati all'interno delle applicazioni usando le le API 
 
 
-Nel codice all'interno di [index2.js](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index2.js) troverete il codice in cui si può rilevare l'immagine di una mano, mentre nell'altro file [index.js](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index.js) (è ancora in sviluppo)viene rilevata la mano della persona durante un video.
+Nel codice all'interno di [rilevamento_mano](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index2.js) troverete il codice in cui si può rilevare l'immagine di una mano, mentre nell'altro file [index.js](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index.js) (è ancora in sviluppo)viene rilevata la mano della persona durante un video.
 
 Il rilevamento delle mani avviene tramite 21 punti ![mano](img/struttura%20mano.png) ogni punto ha le cordinate x, y, x che verranno usate per disegnare la mano rilevata 
 
