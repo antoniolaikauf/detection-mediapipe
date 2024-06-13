@@ -10,9 +10,97 @@ link mediapipe https://ai.google.dev/edge/mediapipe/solutions/guide?hl=it
 
 Mediapipe fornisce modelli che possono essere integrati all'interno delle applicazioni usando le le API 
 
+```
 Nel codice all'interno di [index2.js](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index2.js) trovere il codice in cui si può rilevare l'immagine di una mano, invece nel altro file [index.js](https://github.com/antoniolaikauf/detection-mediapipe/blob/main/index.js) (è ancora in sviluppo) rileva le mani della persona durante un video
 
 Il rilevamento delle mani avviene tramite 21 punti ![mano](img/struttura%20mano.png) ogni punto ha le cordinate x, y, x che verranno usate per disegnare la mano rilevata 
+```
+
+
+Nel file nella cartella [rilevamento_oggetti](/rilevamento_oggetti) si potra vedere un modello che è capace di rilevare oggetti dell'immagine, in base al modello che si usa ci sono vari oggetti che il modello può rilevare 
+
+- person
+- bicycle
+- car
+- motorcycle
+- airplane
+- bus
+- train
+- truck
+- boat
+- traffic light
+- fire hydrant
+- stop sign
+- parking meter
+- bench
+- bird
+- cat
+- dog
+- horse
+- sheep
+- cow
+- elephant
+- bear
+- zebra
+- giraffe
+- backpack
+- umbrella
+- handbag
+- tie
+- suitcase
+- frisbee
+- skis
+- snowboard
+- sports ball
+- kite
+- baseball bat
+- baseball glove
+- skateboard
+- surfboard
+- tennis racket
+- bottle
+- wine glass
+- cup
+- fork
+- knife
+- spoon
+- bowl
+- banana
+- apple
+- sandwich
+- orange
+- broccoli
+- carrot
+- hot dog
+- pizza
+- donut
+- cake
+- chair
+- couch
+- potted plant
+- bed
+- dining table
+- toilet
+- tv
+- laptop
+- mouse
+- remote
+- keyboard
+- cell phone
+- microwave
+- oven
+- toaster
+- sink
+- refrigerator
+- book
+- clock
+- vase
+- scissors
+- teddy bear
+- hair drier
+- toothbrush
+
+
 
 # Procedimento 
 Il procedimento peer implementare il rilevamento è il seguente:
